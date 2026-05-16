@@ -1,158 +1,223 @@
 // @ts-check
-// `@type` JSDoc annotations allow editor autocompletion and type checking
-// (when paired with `@ts-check`).
-// There are various equivalent ways to declare your Docusaurus config.
-// See: https://docusaurus.io/docs/api/docusaurus-config
 
+// Import syntax highlighting themes
 import {themes as prismThemes} from 'prism-react-renderer';
-
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'SOC Documentation Portal',
-  tagline: 'Detection Engineering • Threat Hunting • Incident Response',
-  favicon: 'img/favicon.ico',
 
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
-  future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
-  },
+  // ================================
+  // WEBSITE BASIC INFORMATION
+  // ================================
 
-  // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
+  title: 'Cybrovate Documentation Portal',
+
+  tagline:
+    'Detection Engineering • Threat Hunting • Incident Response',
+
+  // Website favicon
+  favicon: 'images/download.jpg',
+
+  // ================================
+  // WEBSITE URL SETTINGS
+  // ================================
+
+  // Your website URL
+  url: 'http://192.168.1.19:3000',
+
+  // Base URL path
   baseUrl: '/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  // ================================
+  // GITHUB / PROJECT SETTINGS
+  // ================================
+
+  organizationName: 'cybrovate',
+
+  projectName: 'soc-docs',
+
+  // ================================
+  // ERROR HANDLING
+  // ================================
 
   onBrokenLinks: 'throw',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
+  // ================================
+  // LANGUAGE SETTINGS
+  // ================================
+
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
   },
 
+  // ================================
+  // PRESETS CONFIGURATION
+  // ================================
+
   presets: [
     [
       'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
       ({
+        // ================================
+        // DOCUMENTATION SETTINGS
+        // ================================
+
         docs: {
+
+          // Sidebar file location
           sidebarPath: './sidebars.js',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+
+        // ================================
+        // BLOG SETTINGS
+        // ================================
+
+        // Disable blog completely
+        blog: false,
+
+        // ================================
+        // CUSTOM CSS SETTINGS
+        // ================================
+
         theme: {
+
+          // Custom theme CSS file
           customCss: './src/css/custom.css',
         },
       }),
     ],
   ],
 
+  // ================================
+  // THEME CONFIGURATION
+  // ================================
+
   themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
+
+      // Social sharing image
       image: 'img/docusaurus-social-card.jpg',
+
+      // ================================
+      // DARK MODE SETTINGS
+      // ================================
+
       colorMode: {
+
+        // Default theme mode
+        defaultMode: 'dark',
+
+        // Allow user to switch themes
+        disableSwitch: false,
+
+        // Use system dark/light preference
         respectPrefersColorScheme: true,
       },
+
+      // ================================
+      // NAVBAR SETTINGS
+      // ================================
+
       navbar: {
-        title: 'SOC Documentation Portal',
+
+        // Navbar title
+        title: 'Cybrovate Documentation',
+
+        // ================================
+        // NAVBAR LOGO
+        // ================================
+
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+
+          // Alt text for accessibility
+
+          // Logo file location
+          src: 'images/download.jpg',
         },
+
+        // ================================
+        // NAVBAR ITEMS
+        // ================================
+
         items: [
+
+          // Documentation sidebar button
           {
             type: 'docSidebar',
+
             sidebarId: 'tutorialSidebar',
+
             position: 'left',
-            label: 'Tutorial',
+
+            label: 'Documentation',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+
+          // External website button
           {
             href: 'https://www.cybrovate.com/',
+
             label: 'Cybrovate',
+
             position: 'right',
           },
         ],
       },
-      footer: {
-        style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'X',
-                href: 'https://x.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
-      },
+
+      // ================================
+      // FOOTER SETTINGS
+      // ================================
+
+     footer: {
+  style: 'dark',
+
+  links: [
+    {
+      title: 'Documentation',
+      items: [
+        {
+          label: '📘 SOC Docs',
+          to: '/docs/custom-soc-page',
+        },
+      ],
+    },
+
+    {
+      title: 'Community',
+      items: [
+        {
+          label: '🌐 Website',
+          href: 'https://www.cybrovate.com/',
+        },
+      ],
+    },
+
+    {
+      title: 'Security',
+      items: [
+        {
+          label: '🛡️ Threat Hunting',
+          to: '/docs/threat-hunting',
+        },
+      ],
+    },
+  ],
+},
+
+      // ================================
+      // CODE BLOCK THEMES
+      // ================================
+
       prism: {
+
+        // Light mode code theme
         theme: prismThemes.github,
+
+        // Dark mode code theme
         darkTheme: prismThemes.dracula,
       },
     }),
 };
 
+// Export configuration
 export default config;
